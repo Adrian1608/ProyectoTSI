@@ -33,7 +33,7 @@ while True:
             break
     #Esto verifica que el producto no se ingrese más veces:
     if comprados.count(entrada) == 0:
-        print("El producto ha sido insertado incorrectamente.")
+        print("El producto ya ha sido insertado.")
     else:
         #Modificar la entrada de Si o No para que sea válida para el sistema:
         elbooleano = input("¿Insertar más productos a la boleta?(Sí/No): ")
@@ -43,7 +43,7 @@ while True:
         if elbooleano == "no":
             break
 
-#La wea mala que no nos sale:
+#La wea mala que no nos sale, pedir la cantidad de productos ingresados:
 i = 0
 while (len(comprados) != len(cantidad_comprados)):
     cantidad = int(input("Ingrese la cantidad del producto " + comprados[i] + " " + ":" + " "))
@@ -52,6 +52,7 @@ while (len(comprados) != len(cantidad_comprados)):
         i += 1
     else:
         print("Debe ingresar una cantidad válida.")
+
 
 print(comprados)
 print(cantidad_comprados)
