@@ -28,11 +28,10 @@ while True:
             print("Tiene que ingresar un producto.")
             break
         elif entrada == productos[p]:
-            i += 1
             comprados.append(entrada)
             break
     #Esto verifica que el producto no se ingrese más veces:
-    if comprados.count(entrada) == 0:
+    if comprados.count(entrada) != 1:
         print("El producto ya ha sido insertado.")
     else:
         #Modificar la entrada de Si o No para que sea válida para el sistema:
@@ -40,10 +39,11 @@ while True:
         elbooleano = elbooleano.lower()
         elbooleano = elbooleano.replace("í", "i")
         elbooleano = elbooleano.replace(" ","")
+        i += 1
         if elbooleano == "no":
             break
 
-#La wea mala que no nos sale, pedir la cantidad de productos ingresados:
+#Pedir la cantidad de productos ingresados:
 i = 0
 while (len(comprados) != len(cantidad_comprados)):
     cantidad = int(input("Ingrese la cantidad del producto " + comprados[i] + " " + ":" + " "))
