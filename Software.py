@@ -49,11 +49,16 @@ d = 0
 while (len(comprados) != len(cantidad_comprados)):
     cantidad = int(input("Ingrese la cantidad del producto " + comprados[d] + " " + ":" + " "))
     if cantidad > 0:
-        cantidad_comprados.append(cantidad)
-        d += 1
+        if cantidad < stock[productos.index(comprados[d])]:
+            cantidad_comprados.append(cantidad)
+            stock[productos.index(comprados[d])] = stock[productos.index(comprados[d])] - cantidad
+            d =+ 1
+        else:
+            print("No hay suficiente cantidad del producto requerido.")
     else:
         print("Debe ingresar una cantidad válida.")
 
 
 print(comprados)
 print(cantidad_comprados)
+print(stock)

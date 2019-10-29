@@ -51,7 +51,8 @@ while (len(comprados) != len(cantidad_comprados)):
     if cantidad > 0:
         if cantidad < stock[productos.index(comprados[d])]:
             cantidad_comprados.append(cantidad)
-            d += 1
+            stock[productos.index(comprados[d])] = stock[productos.index(comprados[d])] - cantidad
+            d =+ 1
         else:
             print("No hay suficiente cantidad del producto requerido.")
     else:
@@ -60,4 +61,4 @@ while (len(comprados) != len(cantidad_comprados)):
 
 print(comprados)
 print(cantidad_comprados)
-print(productos.index(comprados[d]))
+print(stock)
