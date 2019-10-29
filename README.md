@@ -16,6 +16,6 @@
 
 ### División del proyecto:
 
-* Zuzunaga  : Verificacion de los productos.
+* Zuzunaga  : Verificacion de los productos y eliminación de repeticiones.
 * Arango    : Definición de arreglos y generación de la boleta. 
-* Gutierrez : Método de pago.
+* Gutierrez : Método de pago y diseño de algoritmos.
