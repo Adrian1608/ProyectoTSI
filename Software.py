@@ -24,16 +24,18 @@ while True:
     entrada = entrada.replace(" ","")
     #Se lee el arreglo para verificar que el producto esté disponible:
     for p in range(0, len(productos)):
-        if (entrada == ""):
-            print("Tiene que ingresar un producto.")
-            break
-        elif entrada == productos[p]:
+        if entrada == productos[p]:
             comprados.append(entrada)
             break
+        elif entrada == (""):
+            print("Debe ingresar un producto.")
+            break
     #Esto verifica que el producto no se ingrese más veces:
-    if comprados.count(entrada) != 1:
+    if comprados.count(entrada) > 1:
         print("El producto ya ha sido insertado.")
         comprados.remove(entrada)
+    elif entrada != productos[p]:
+        print("El producto no es válido.")
     else:
         #Modificar la entrada de Si o No para que sea válida para el sistema:
         elbooleano = input("¿Insertar más productos a la boleta?(Sí/No): ")
