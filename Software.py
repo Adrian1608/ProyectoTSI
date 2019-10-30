@@ -74,6 +74,25 @@ while (len(comprados) != len(cantidad_comprados)):
     else:
         print("Debe ingresar una cantidad válida.")
 
+#Información del cliente , métodos de pago :
+
+nombre = input("Ingrese el nombre del cliente: ")
+while True:
+#método de pago
+    metodo = input("¿Pagará con tarjeta o efectivo? ")
+    metodo = metodo.lower()
+    metodo = metodo.replace(" ","")
+
+    if metodo== "tarjeta":
+        print(metodo)
+        break
+    elif metodo=="efectivo":
+        print(metodo)
+        break
+    else:
+        print("Ingrese un método válido.")
+        
+
 
 print(comprados)
 print(cantidad_comprados)
