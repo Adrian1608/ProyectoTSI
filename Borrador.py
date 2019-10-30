@@ -15,6 +15,8 @@ cantidad_comprados = []
 
 nombre_empresa = input("Ingrese el nombre de su mini-market: ")
 print("Bienvenidos a " + nombre_empresa + "\n")
+if nombre_empresa == "gaa":
+    print ("aea mongol")
 i = 1
 while True:
     #Se piden los productos que se están registrando y se modifica lo escrito para que sea 
