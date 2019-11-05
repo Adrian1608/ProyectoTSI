@@ -7,7 +7,7 @@ productos = ["arrozcosteño", "cocacolapersonal", "inkakolapersonal", "chocolate
 "detergenteariel", "galletascasino", "galletaschaplin", "chocolatevicio", "ajinosillao", "ketchupalacena", 
 "cubosmaggie", "ajinomen"]
 precios = [2.50,2.00,1.50,2.50,3.50,1.50,5.00,3.50,1.20,1.00,2.00,7.00,4.00,3.50,2.50]
-stock = [20,15,15,16,12,25,25,10,14,5,10,15,10,20,50]
+stock = [20,15,15,16,12,25,25,10,14,15,10,15,10,20,50]
 comprados = []
 cantidad_comprados = []
 
@@ -15,6 +15,7 @@ cantidad_comprados = []
 
 nombre_empresa = input("Ingrese el nombre de su mini-market: ")
 print("Bienvenidos a " + nombre_empresa + "\n")
+nombre_empresa = nombre_empresa.lower()
 if nombre_empresa == "gaa":
     print ("aea mongol")
 i = 1
@@ -55,13 +56,42 @@ while (len(comprados) != len(cantidad_comprados)):
     if cantidad > 0:
         if cantidad <= stock[productos.index(comprados[d])]:
             cantidad_comprados.append(cantidad)
+            #Actualizacion del stock
             stock[productos.index(comprados[d])] = stock[productos.index(comprados[d])] - cantidad
+            #Avisar al usuario del stock agotado
+            if stock[productos.index(comprados[d])] == 0:
+                print("El stock de "+ comprados[d]+" se ha acabado." )
+            #Avisar el stock está apunto de acabarse    
+            elif  stock[productos.index(comprados[d])] <=5:
+                print("El stock de "+ comprados[d]+" está a punto de agotarse." )
+              
             d += 1
+
+                
         else:
             print("No hay suficiente cantidad del producto requerido.")
             
     else:
         print("Debe ingresar una cantidad válida.")
+
+#Información del cliente , métodos de pago :
+
+nombre = input("Ingrese el nombre del cliente: ")
+while True:
+#método de pago
+    metodo = input("¿Pagará con tarjeta o efectivo? ")
+    metodo = metodo.lower()
+    metodo = metodo.replace(" ","")
+
+    if metodo== "tarjeta":
+        print(metodo)
+        break
+    elif metodo=="efectivo":
+        print(metodo)
+        break
+    else:
+        print("Ingrese un método válido.")
+        
 
 
 print(comprados)
