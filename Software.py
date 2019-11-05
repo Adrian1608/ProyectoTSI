@@ -92,7 +92,14 @@ while True:
 
     if metodo== "tarjeta":
         print(metodo)
-        
+        numero=[]
+        while True:
+            tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
+            for i in str(tarjeta_a_usar):
+                numero.append(i)
+            if len(numero) == 16:
+                break
+            vuelto = 0
         break
     elif metodo=="efectivo":
         print(metodo)
@@ -122,3 +129,4 @@ print(stock)
 print(metodo)
 print(total_pagar)
 print("vuelto: ", vuelto)
+print(numero)
