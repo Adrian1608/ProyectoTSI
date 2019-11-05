@@ -92,6 +92,7 @@ while True:
 
     if metodo== "tarjeta":
         print(metodo)
+        
         break
     elif metodo=="efectivo":
         print(metodo)
@@ -103,7 +104,7 @@ while True:
                     break
                 else:
                     residuo = total_pagar - dinero_a_ingresar
-                    print("Cantidad insuficiente, faltan s/. " + residuo)
+                    print("Cantidad insuficiente, faltan s/. " + str(residuo))
             else:
                 print("Cantidad de dinero no valida")
         break
@@ -120,3 +121,4 @@ print(cantidad_comprados)
 print(stock)
 print(metodo)
 print(total_pagar)
+print("vuelto: ", vuelto)
