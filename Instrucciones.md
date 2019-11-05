@@ -1,12 +1,6 @@
-# La caja de ZuZu
+# La Caja de ZuZu
 
-##### La Caja de Zuzu es un software dirigido a mini-markets, que será usado con la función de generar boletas y registrar pagos a partir de información previamente guardada en este mismo, así mismo, podrá avisar en caso el stock de cierto producto se esté agotando o no esté disponible.
-
-##### La Caja de Zuzu ha sido desarrollada con la finalidad de ahorrarle tiempo a los cajeros de la tienda en cuestión gracias a la tecnología que el software provee.
-
-##### La Caja de Zuzu se desarrolló para ser usada por los cajeros de los mini-markets, se necesita un nivel básico de conocimiento del uso de una computadora.
-
-#### Especificación de requerimientos del proyecto
+###### La Caja de ZuZu es un software dirigido a mini-markets, que será usado con la función de generar boletas y registrar pagos a partir de información que guarada la misma app, y podrá avisar el estado actual del stock de cierto producto. Este software se desarrolló con el fin de facilitar el trabajo de los empleados de la tienda en cuestión, con apoyo de la tecnología que La Caja de ZuZu provee. Finalmente, este software se ha desarrollado para ser usado por los cajeros de los mini-markets, se necesita un nivel básico de conocimiento del uso de computadoras. 
 
 ###### Para usar La Caja de ZuZu, el empleado en cuestión debe tener abierto el software en Visual Studio Code, y cuando ejecute la aplicación, debe insertar los productos que el cliente está comprando. Al hacer esto, se le preguntará constantemente si desea añadir más productos a la boleta, a lo cual deberá responder "Sí" o "No" acorde al caso, y una vez termine de insertar los datos, se le consultará la cantidad comprada de cada producto insertado. Luego se le consultará el nombre del cliente al cajero, y se dará a elegir el pago entre efectivo o con tarjeta, y acorde a esto finalmente se calculará el pago total, usando los precios guardados en la misma aplicación.
 
@@ -38,4 +32,4 @@
 - Buscar en la barra superior a la derecha el botón "Run Code" y presionarlo
 - Utilizar la Caja de ZuZu
 
-###### Especificaciones de prueba y ejecución: Para usar La Caja de ZuZu es necesario instalar el Entorno de Desarrollo Integrado Visual Studio Code, y además, se necesita obligatoriamente la extensión de Python del mismo entorno. También para darle facilidad a los empleados, se usa Code Runner, aunque este no es completamente necesario, pues con el click derecho y "Run Python File in Terminal..." se puede ejecutar de igual manera la aplicación.
+###### Para usar La Caja de ZuZu es necesario instalar el Entorno de Desarrollo Integrado Visual Studio Code, y además, se necesita obligatoriamente la extensión de Python del mismo entorno. También para darle facilidad a los empleados, se usa Code Runner, aunque este no es completamente necesario, pues con el click derecho y "Run Python File in Terminal..." se puede ejecutar de igual manera la aplicación.
