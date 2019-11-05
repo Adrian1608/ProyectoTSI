@@ -74,6 +74,13 @@ while (len(comprados) != len(cantidad_comprados)):
     else:
         print("Debe ingresar una cantidad válida.")
 
+#Calcular total a pagar:
+a = 0
+total_pagar = 0
+for i in comprados:
+    total_pagar = total_pagar + (cantidad_comprados[a] * precios[productos.index(comprados[a])])
+    a += 1
+
 #Información del cliente , métodos de pago :
 
 nombre = input("Ingrese el nombre del cliente: ")
@@ -88,12 +95,28 @@ while True:
         break
     elif metodo=="efectivo":
         print(metodo)
+        while True:
+            dinero_a_ingresar = float(input("Ingrese cantidad de dinero depositada: "))
+            if dinero_a_ingresar > 0:
+                if dinero_a_ingresar >= total_pagar:
+                    vuelto = dinero_a_ingresar - total_pagar
+                    break
+                else:
+                    residuo = total_pagar - dinero_a_ingresar
+                    print("Cantidad insuficiente, faltan s/. " + residuo)
+            else:
+                print("Cantidad de dinero no valida")
         break
     else:
         print("Ingrese un método válido.")
+
+   
+
         
 
 
 print(comprados)
 print(cantidad_comprados)
 print(stock)
+print(metodo)
+print(total_pagar)
