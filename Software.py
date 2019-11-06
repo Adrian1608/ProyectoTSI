@@ -91,20 +91,44 @@ while True:
     metodo = metodo.replace(" ","")
 
     if metodo== "tarjeta":
-        traj = input("¿Visa o Mastercard?: ")
+        
         print(metodo)
         numero=[]
         while True:
-            tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
-            for i in str(tarjeta_a_usar):
-                numero.append(i)
-            if len(numero) == 16:   
-                break  
+            print(numero)
+            traj = input("¿Visa o Mastercard? ")
+            traj = traj.lower()
+            traj = traj.replace(" ","")
+            numero = []
+            if traj == "visa":
+                while True:
+                    numero = []
+                    tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
+                    for i in str(tarjeta_a_usar):
+                        numero.append(i)
+                    if len(numero) == 16 and numero[0] == "4":
+                        break
+                    else:
+                        print("Numero de tarjeta no valido para visa")
+                break
+            if traj == "mastercard":
+                while True:
+                    numero = []
+                    tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
+                    for i in str(tarjeta_a_usar):
+                        numero.append(i)
+                    if len(numero) == 16 and numero[0] == "5":
+                        break
+                    else:
+                        print("Numero de tarjeta no valido para mastercard")
+                break
+            else:
+                print("Metodo de pago no valido, ingrese un tipo de tarjeta afiliada")                                                  
         break
     elif metodo=="efectivo":
         print(metodo)
         while True:
-            dinero_a_ingresar = float(input("Ingrese cantidad de dinero depositada: "))
+            dinero_a_ingresar = float(input("Ingrese cantidad de dinero depositado: "))
             if dinero_a_ingresar > 0:
                 if dinero_a_ingresar >= total_pagar:
                     vuelto = dinero_a_ingresar - total_pagar                    
@@ -121,7 +145,8 @@ while True:
 
    
 
-        
+        #visa 4
+        #mastercard 5
 
 
 print(comprados)
