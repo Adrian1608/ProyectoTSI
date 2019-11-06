@@ -102,8 +102,14 @@ while True:
                 tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
                 for i in str(tarjeta_a_usar):
                     numero.append(i)
-                if len(numero) == 16:   
-                    break                 
+                if len(numero) == 16:
+                    if traj=="visa":
+                        if numero[0] == 4:
+                            break
+                    elif traj =="mastercard":
+                        if numero[0]== 5:
+                            break                                              
+                break        
         break
     elif metodo=="efectivo":
         print(metodo)
@@ -125,7 +131,8 @@ while True:
 
    
 
-        
+        #visa 4
+        #mastercard 5
 
 
 print(comprados)
