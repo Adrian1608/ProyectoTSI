@@ -22,7 +22,7 @@ i = 1
 while True:
     #Se piden los productos que se están registrando y se modifica lo escrito para que sea 
     #válido con el arreglo "productos":
-    entrada=input("Ingrese el producto " + str(i) + " : ")
+    entrada = input("Ingrese el producto " + str(i) + " : ")
     entrada = entrada.lower()
     entrada = entrada.replace(" ","")
     #Se lee el arreglo para verificar que el producto esté disponible:
@@ -102,7 +102,6 @@ while True:
             numero = []
             if traj == "visa":
                 while True:
-                    print(numero)
                     numero = []
                     tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
                     for i in str(tarjeta_a_usar):
@@ -114,7 +113,6 @@ while True:
                 break
             if traj == "mastercard":
                 while True:
-                    print(numero)
                     numero = []
                     tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
                     for i in str(tarjeta_a_usar):
@@ -145,12 +143,6 @@ while True:
     else:
         print("Ingrese un método válido.")
 
-   
-
-        #visa 4
-        #mastercard 5
-
-
 print(comprados)
 print(cantidad_comprados)
 print(stock)
@@ -160,3 +152,19 @@ if metodo == "tarjeta":
     print(numero)
     print(traj)
 print("Su vuelto va hacer de: S/." , vuelto)
+
+#Su Real Boleta
+
+nombre = nombre.capitalize()
+print( "\n" + "*********** Boleta de pago ***********")
+print("Nombre del cliente: " + nombre)
+if metodo == "tarjeta":
+    metodo = metodo.capitalize()
+    print("Método de pago: " + metodo)
+elif metodo == "efectivo":
+    metodo = metodo.capitalize()
+    print("Método de pago: " + metodo)
+print("Tipo de moneda: Nuevo sol" + "\n")
+print("Compras realizadas:")
+for a in comprados:
+    print(a.capitalize() + ": " + str(precios.index(a)) + " x " + str(cantidad_comprados.index(a)) + " = " + str(cantidad_comprados[a] * precios[productos.index(comprados[a]))
