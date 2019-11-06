@@ -95,21 +95,37 @@ while True:
         print(metodo)
         numero=[]
         while True:
+            print(numero)
             traj = input("¿Visa o Mastercard? ")
             traj = traj.lower()
             traj = traj.replace(" ","")
-            if traj == "visa" or traj == "mastercard":
-                tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
-                for i in str(tarjeta_a_usar):
-                    numero.append(i)
-                if len(numero) == 16:
-                    if traj=="visa":
-                        if numero[0] == 4:
-                            break
-                    elif traj =="mastercard":
-                        if numero[0]== 5:
-                            break                                              
-                break        
+            numero = []
+            if traj == "visa":
+                while True:
+                    print(numero)
+                    numero = []
+                    tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
+                    for i in str(tarjeta_a_usar):
+                        numero.append(i)
+                    if len(numero) == 16 and numero[0] == "4":
+                        break
+                    else:
+                        print("Numero de tarjeta no valido para visa")
+                break
+            if traj == "mastercard":
+                while True:
+                    print(numero)
+                    numero = []
+                    tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
+                    for i in str(tarjeta_a_usar):
+                        numero.append(i)
+                    if len(numero) == 16 and numero[0] == "5":
+                        break
+                    else:
+                        print("Numero de tarjeta no valido para mastercard")
+                break
+            else:
+                print("Metodo de pago no valido, ingrese un tipo de tarjeta afiliada")                                                  
         break
     elif metodo=="efectivo":
         print(metodo)
