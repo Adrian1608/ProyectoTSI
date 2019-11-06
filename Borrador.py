@@ -91,20 +91,24 @@ while True:
     metodo = metodo.replace(" ","")
 
     if metodo== "tarjeta":
-        traj = input("¿Visa o Mastercard?: ")
+        
         print(metodo)
         numero=[]
         while True:
-            tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
-            for i in str(tarjeta_a_usar):
-                numero.append(i)
-            if len(numero) == 16:   
-                break  
+            traj = input("¿Visa o Mastercard? ")
+            traj = traj.lower()
+            traj = traj.replace(" ","")
+            if traj == "visa" or traj == "mastercard":
+                tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
+                for i in str(tarjeta_a_usar):
+                    numero.append(i)
+                if len(numero) == 16:   
+                    break                 
         break
     elif metodo=="efectivo":
         print(metodo)
         while True:
-            dinero_a_ingresar = float(input("Ingrese cantidad de dinero depositada: "))
+            dinero_a_ingresar = float(input("Ingrese cantidad de dinero depositado: "))
             if dinero_a_ingresar > 0:
                 if dinero_a_ingresar >= total_pagar:
                     vuelto = dinero_a_ingresar - total_pagar                    

@@ -82,7 +82,7 @@ for i in comprados:
     a += 1
 
 #Información del cliente , métodos de pago :
-
+vuelto = 0
 nombre = input("Ingrese el nombre del cliente: ")
 while True:
 #método de pago
@@ -91,15 +91,15 @@ while True:
     metodo = metodo.replace(" ","")
 
     if metodo== "tarjeta":
+        traj = input("¿Visa o Mastercard?: ")
         print(metodo)
         numero=[]
         while True:
             tarjeta_a_usar = int(input("Ingrese un numero de tarjeta de credito valido: "))
             for i in str(tarjeta_a_usar):
                 numero.append(i)
-            if len(numero) == 16:
-                break
-            vuelto = 0
+            if len(numero) == 16:   
+                break  
         break
     elif metodo=="efectivo":
         print(metodo)
@@ -107,8 +107,9 @@ while True:
             dinero_a_ingresar = float(input("Ingrese cantidad de dinero depositada: "))
             if dinero_a_ingresar > 0:
                 if dinero_a_ingresar >= total_pagar:
-                    vuelto = dinero_a_ingresar - total_pagar
+                    vuelto = dinero_a_ingresar - total_pagar                    
                     break
+    
                 else:
                     residuo = total_pagar - dinero_a_ingresar
                     print("Cantidad insuficiente, faltan s/. " + str(residuo))
@@ -128,5 +129,7 @@ print(cantidad_comprados)
 print(stock)
 print(metodo)
 print(total_pagar)
-print("vuelto: ", vuelto)
-print(numero)
+if metodo == "tarjeta":
+    print(numero)
+    print(traj)
+print("Su vuelto va hacer de: S/." , vuelto)
