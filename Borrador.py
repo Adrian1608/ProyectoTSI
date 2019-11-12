@@ -150,19 +150,12 @@ while True:
                 print("Cantidad de dinero no valida")
         break
     else:
-        print("Ingrese un método válido.")
-
-for q in range(0, len(comprados)):
-    para_el_precio = productos.index(comprados[q])
-    para_el_precio2 = precios[para_el_precio]
-    cantidad_de_producto = cantidad_comprados[q]
-    resultado = (para_el_precio2*cantidad_de_producto)
-    resultado = round(resultado,2)
-    
+        print("Ingrese un método válido.")    
 
 igv = total_pagar*(18/100)
 igv = round(igv,2)
 total_total = total_pagar + igv
+total_total = round(total_total,2)
 
 #Su Real Boleta
 
@@ -181,6 +174,11 @@ print("Cliente pago con: S/. " + str(dinero_a_ingresar))
 print("Tipo de moneda: Nuevo sol" + "\n")
 print("Compras realizadas:")
 for q in range(0, len(comprados)):
+    para_el_precio = productos.index(comprados[q])
+    para_el_precio2 = precios[para_el_precio]
+    cantidad_de_producto = cantidad_comprados[q]
+    resultado = (para_el_precio2*cantidad_de_producto)
+    resultado = round(resultado,2)
     print(comprados[q] + ": " + str(cantidad_comprados[q]) + " x S/." + str(para_el_precio2) + " = S/. " + str(resultado))
 print("Precio neto: S/." + str(total_pagar))
 print("IGV: S/." + str(igv))
