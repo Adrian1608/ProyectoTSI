@@ -18,6 +18,10 @@ print("Bienvenidos a " + nombre_empresa + "\n")
 nombre_empresa = nombre_empresa.lower()
 if nombre_empresa == "gaa":
     print ("aea mongol")
+
+print("Productos del minimarket: ")
+print(str(productos) + "\n")
+
 i = 1
 while True:
     #Se piden los productos que se están registrando y se modifica lo escrito para que sea 
@@ -170,7 +174,7 @@ print("Cliente pago con: S/. " + str(dinero_a_ingresar))
 print("Tipo de moneda: Nuevo sol" + "\n")
 print("Compras realizadas:")
 for q in range(0, len(comprados)):
-    print(comprados[q] + ": " + str(cantidad_de_producto) + " x S/." + str(para_el_precio2) + " = S/. " + str(resultado))
+    print(comprados[q] + ": " + str(cantidad_comprados[q]) + " x S/." + str(para_el_precio2) + " = S/. " + str(resultado))
 print("Precio neto: S/." + str(total_pagar))
 print("IGV: S/." + str(igv))
 print("Total a pagar: S/." + str(total_total))
