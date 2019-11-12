@@ -156,7 +156,8 @@ print("Su vuelto va hacer de: S/." , vuelto)
 #Su Real Boleta
 
 nombre = nombre.capitalize()
-print( "\n" + "*********** Boleta de pago ***********")
+#son 10 tabs para el centro
+print( "\n" + "                                     *********** Boleta de pago ***********")
 print("Nombre del cliente: " + nombre)
 if metodo == "tarjeta":
     metodo = metodo.capitalize()
@@ -166,5 +167,11 @@ elif metodo == "efectivo":
     print("Método de pago: " + metodo)
 print("Tipo de moneda: Nuevo sol" + "\n")
 print("Compras realizadas:")
-for a in comprados:
-    print(a.capitalize() + ": " + str(precios.index(a)) + " x " + str(cantidad_comprados.index(a)) + " = " + str(cantidad_comprados[a] * precios[productos.index(comprados[a]))
+for q in range(0, len(comprados)):
+    para_el_precio = productos.index(comprados[q])
+    para_el_precio2 = precios[para_el_precio]
+    cantidad_de_producto = cantidad_comprados[q]
+    resultado = (para_el_precio2*cantidad_de_producto)
+    resultado = round(resultado,2)
+    print(comprados[q] + ": " + str(cantidad_de_producto) + " x " + str(para_el_precio2) + " = " + str(resultado))
+
