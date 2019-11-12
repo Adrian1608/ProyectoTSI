@@ -7,6 +7,7 @@ productos = ["arrozcosteño", "cocacolapersonal", "inkakolapersonal", "chocolate
 "detergenteariel", "galletascasino", "galletaschaplin", "chocolatevicio", "ajinosillao", "ketchupalacena", 
 "cubosmaggie", "ajinomen"]
 precios = [2.50,2.00,1.50,2.50,3.50,1.50,5.00,3.50,1.20,1.00,2.00,7.00,4.00,3.50,2.50]
+codigo = [0,1,2,3,4,5,6,7,8,9,10,12,13,14]
 stock = [20,15,15,16,12,25,25,10,14,15,10,15,10,20,50]
 comprados = []
 cantidad_comprados = []
@@ -21,6 +22,8 @@ if nombre_empresa == "gaa":
 
 print("Productos del minimarket: ")
 print(str(productos) + "\n")
+print("Codigos de productos: ")
+print(str(codigo) + "\n")
 
 i = 1
 while True:
@@ -29,6 +32,10 @@ while True:
     entrada = input("Ingrese el producto " + str(i) + " : ")
     entrada = entrada.lower()
     entrada = entrada.replace(" ","")
+
+    if entrada.isnumeric:
+        entrada = productos[int(entrada)]
+        print(entrada)
     #Se lee el arreglo para verificar que el producto esté disponible:
     for p in range(0, len(productos)):
         if entrada == productos[p]:
