@@ -92,10 +92,8 @@ while True:
 
     if metodo== "tarjeta":
         
-        print(metodo)
         numero=[]
         while True:
-            print(numero)
             traj = input("¿Visa o Mastercard? ")
             traj = traj.lower()
             traj = traj.replace(" ","")
@@ -143,35 +141,40 @@ while True:
     else:
         print("Ingrese un método válido.")
 
-print(comprados)
-print(cantidad_comprados)
-print(stock)
-print(metodo)
-print(total_pagar)
-if metodo == "tarjeta":
-    print(numero)
-    print(traj)
-print("Su vuelto va hacer de: S/." , vuelto)
-
-#Su Real Boleta
-
-nombre = nombre.capitalize()
-#son 10 tabs para el centro
-print( "\n" + "                                     *********** Boleta de pago ***********")
-print("Nombre del cliente: " + nombre)
-if metodo == "tarjeta":
-    metodo = metodo.capitalize()
-    print("Método de pago: " + metodo)
-elif metodo == "efectivo":
-    metodo = metodo.capitalize()
-    print("Método de pago: " + metodo)
-print("Tipo de moneda: Nuevo sol" + "\n")
-print("Compras realizadas:")
 for q in range(0, len(comprados)):
     para_el_precio = productos.index(comprados[q])
     para_el_precio2 = precios[para_el_precio]
     cantidad_de_producto = cantidad_comprados[q]
     resultado = (para_el_precio2*cantidad_de_producto)
     resultado = round(resultado,2)
-    print(comprados[q] + ": " + str(cantidad_de_producto) + " x " + str(para_el_precio2) + " = " + str(resultado))
+    
 
+igv = total_pagar*(18/100)
+igv = round(igv,2)
+total_total = total_pagar + igv
+
+#Su Real Boleta
+
+nombre = nombre.capitalize()
+#son 10 tabs para el centro
+print( "\n" + "*********** Boleta de pago ***********")
+print("Nombre del cliente: " + nombre)
+if metodo == "tarjeta":
+    metodo = metodo.capitalize()
+    print("Método de pago: " + metodo)
+    print("Número de tarjeta: " + str(tarjeta_a_usar))
+    dinero_a_ingresar = total_total
+elif metodo == "efectivo":
+    print("Método de pago: " + metodo.capitalize())
+print("Cliente pago con: S/. " + str(dinero_a_ingresar))
+print("Tipo de moneda: Nuevo sol" + "\n")
+print("Compras realizadas:")
+for q in range(0, len(comprados)):
+    print(comprados[q] + ": " + str(cantidad_de_producto) + " x S/." + str(para_el_precio2) + " = S/. " + str(resultado))
+print("Precio neto: S/." + str(total_pagar))
+print("IGV: S/." + str(igv))
+print("Total a pagar: S/." + str(total_total))
+vuelto -= igv
+if metodo == "efectivo":
+    print("Su vuelto va a ser de: S/." , vuelto, "\n")
+print("Gracias por visitar " + nombre_empresa + "\n")
