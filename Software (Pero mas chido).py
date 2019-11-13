@@ -161,7 +161,7 @@ total_total = round(total_total,2)
 
 nombre = nombre.capitalize()
 #son 10 tabs para el centro
-print( "\n" + "*********** Boleta de pago ***********")
+print( "\n" + "************ Boleta de pago ************")
 print("Nombre del cliente: " + nombre)
 if metodo == "tarjeta":
     metodo = metodo.capitalize()
