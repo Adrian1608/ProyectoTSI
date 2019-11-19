@@ -52,23 +52,13 @@ while True:
     elif entrada != productos[p]:
         print("El producto no es válido.")
     else:
-        #Modificar la entrada de Si o No para que sea válida para el sistema:
-        elbooleano = "si"
-        while True:
-            elbooleano = input("¿Insertar más productos a la boleta?(Sí/No): ")
-            elbooleano = elbooleano.lower()
-            elbooleano = elbooleano.replace("í", "i")
-            elbooleano = elbooleano.replace(" ","")
-            if elbooleano == "no":
-                break
-            if elbooleano == "si":
-                i += 1
-                break
-            if elbooleano != "si" or elbooleano != "no":
-                print("Ingrese una respuesta valida")
-    if elbooleano == "no":
-        break  
-
+        #Modificar la entrada de Si o No para que sea válida para el sistema:   
+        elbooleano = input("¿Insertar más productos a la boleta?(Sí/No): ")
+        elbooleano = elbooleano.lower()
+        elbooleano = elbooleano.replace("í", "i")
+        elbooleano = elbooleano.replace(" ","")
+        if elbooleano == "no":
+            break
 #Pedir la cantidad de productos ingresados:
 d = 0
 while (len(comprados) != len(cantidad_comprados)):
