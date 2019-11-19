@@ -57,6 +57,7 @@ while True:
         elbooleano = elbooleano.lower()
         elbooleano = elbooleano.replace("í", "i")
         elbooleano = elbooleano.replace(" ","")
+        i += 1
         if elbooleano == "no":
             break
 #Pedir la cantidad de productos ingresados:
@@ -151,7 +152,7 @@ while True:
     else:
         print("Ingrese un método válido.")    
 
-igv = total_pagar*(18/100)
+igv = total_pagar/1.18
 igv = round(igv,2)
 total_total = total_pagar + igv
 total_total = round(total_total,2)
